@@ -86,8 +86,8 @@ export default {
 .mainbox {
   width: 100%;
   position: absolute;
-  top: 2.6rem;
-  bottom: 3rem;
+  top: 0;
+  bottom: 0;
   background: #fffcf1;
 }
 .bg-black {
