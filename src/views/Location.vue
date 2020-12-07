@@ -2,15 +2,15 @@
   <div class="location">
     <van-swipe ref="swiper" :loop="false" :show-indicators="false" @change="onChange">
       <van-swipe-item>
-        <!-- <div
+        <div
           class="showimg"
-          style="background-image: url(https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/xytd/jt.png);"
-        ></div>-->
-        <img
+          style="background-image: url(https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/futureCity/quwei.png);"
+        ></div>
+        <!-- <img
           class="bottompic"
-          src="https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/xytd/jt.png"
-          width="100%"
-        />
+          src="https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/futureCity/quwei.png"
+          height="100%"
+        /> -->
       </van-swipe-item>
       <van-swipe-item>
         <!-- <div
@@ -74,13 +74,13 @@
         />
       </van-grid>
     </div>
-    <div class="bg">
+    <!-- <div class="bg">
       <img
         class="bottompic"
         src="https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/xytd/qw.png"
         width="100%"
       />
-    </div>
+    </div> -->
   </div>
 </template>
 <script>
@@ -136,7 +136,7 @@ export default {
 <style lang="scss" scoped>
 .location {
   .van-swipe {
-    top: 20%;
+    height: 100%;
     z-index: 9;
   }
 }
@@ -189,15 +189,16 @@ export default {
   }
 }
 .showimg {
+  display: inline-block;
   width: 100%;
-  height: 25rem /* 400/16 */;
+  height: 100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 .bg {
   position: absolute;
-  top: 20%;
+  top: 0;
   left: 0;
   z-index: 1;
   width: 100%;

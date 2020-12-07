@@ -101,10 +101,10 @@ export default {
 
   .logo {
     display: inline-block;
-    width: 15rem;
+    width: 10rem;
     height: 1.8rem;
     background-image: url("https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/futureCity/futrueLogo.png");
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
   }
   .top {
@@ -117,8 +117,11 @@ export default {
 }
 .van-tabbar {
   z-index: 10 !important;
-  // height: 60px !important;
-  background-color: #333 !important;
+  left: 1.25rem!important;
+  right: 1.25rem!important;
+  bottom: 1.25rem !important;
+  width: auto!important;
+  background-color:rgba($color: #333333, $alpha: 0.3)!important;
   color: #ccc !important;
   a {
     color: #ccc;
