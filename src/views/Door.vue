@@ -72,7 +72,7 @@
       @click="showBox=true, num=0"
       v-if="showBox===false"
     />
-    <iframe src="https://720yun.com/t/7dvkOl1wO27" frameborder="no" class="ifr" v-if="num===1"></iframe>
+    <iframe src="https://720yun.com/t/b8vkcl1e0r9" frameborder="no" class="ifr" v-if="num===1"></iframe>
     <iframe src="https://720yun.com/t/devksb7hppl" frameborder="no" class="ifr" v-if="num===2"></iframe>
     <iframe src="https://720yun.com/t/01vkOe8h719" frameborder="no" class="ifr" v-if="num===3"></iframe>
   </div>
@@ -127,7 +127,7 @@ export default {
   position: relative;
   overflow: hidden;
   top: 0;
-  height: 88.6vh;
+  height: 100vh;
   .van-swipe {
     position: absolute;
     left: 0;
@@ -221,7 +221,8 @@ export default {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 99;
+  bottom: 0;
+  z-index: 9;
   width: 100%;
   height: 100%;
 }
