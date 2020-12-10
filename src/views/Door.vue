@@ -76,7 +76,7 @@
         <div
           class="toppic"
           style="
-            background-image: url(https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/xytd/C1.jpg);
+            background-image: url(https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/futureCity/C1.jpg);
           "
         ></div>
         <div
