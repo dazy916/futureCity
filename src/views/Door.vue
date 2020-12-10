@@ -1,15 +1,50 @@
 <template>
   <div class="location">
-    <van-swipe ref="swiper" :loop="false" :show-indicators="false" @change="onChange">
-      <van-swipe-item @click="num=1, showBox=false">
+    <van-row
+      class="bg-black"
+      type="flex"
+      justify="space-between"
+      align="center"
+    >
+      <van-col>
+        <div class="logo"></div>
+      </van-col>
+      <van-col span="12">
+        <van-row type="flex" justify="end" class="top" gutter="20">
+          <van-col>
+            <a href="tel:028-62577777">
+              <van-icon name="phone-circle-o" />
+            </a>
+          </van-col>
+          <van-col>
+            <!-- <a href="http://j.map.baidu.com/29/Kj8"> -->
+            <a
+              href="https://map.baidu.com/poi/%E5%BD%AD%E5%B7%9E%E4%B8%87%E8%BE%BE%E5%B9%BF%E5%9C%BA%E8%90%A5%E9%94%80%E4%B8%AD%E5%BF%83/@11573795.195,3611603.14,19z?uid=efe7fe8242e04011afcb6687&ugc_type=3&ugc_ver=1&device_ratio=1&compat=1&querytype=detailConInfo&da_src=shareurl"
+            >
+              <van-icon name="location-o" />
+            </a>
+          </van-col>
+        </van-row>
+      </van-col>
+    </van-row>
+    <van-swipe
+      ref="swiper"
+      :loop="false"
+      :show-indicators="false"
+      @change="onChange"
+    >
+      <van-swipe-item @click="(num = 1), (showBox = false)">
         <div
           class="toppic"
-          style="background-image: url(https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/xytd/A1.jpg)"
+          style="
+            background-image: url(https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/futureCity/B1.jpg);
+          "
         ></div>
-        <!-- <img src="https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/xytd/A1.jpg" /> -->
         <div
           class="bottompic"
-          style="background-image: url(https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/xytd/A1.png)"
+          style="
+            background-image: url(https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/xytd/A1.png);
+          "
         >
           <!-- <img
             class="bottompic"
@@ -18,14 +53,18 @@
           />-->
         </div>
       </van-swipe-item>
-      <van-swipe-item @click="num=2, showBox=false">
+      <van-swipe-item @click="(num = 2), (showBox = false)">
         <div
           class="toppic"
-          style="background-image: url(https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/xytd/A2.jpg)"
+          style="
+            background-image: url(https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/futureCity/B2.jpg);
+          "
         ></div>
         <div
           class="bottompic"
-          style="background-image: url(https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/xytd/A2.png)"
+          style="
+            background-image: url(https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/xytd/A2.png);
+          "
         ></div>
         <!-- <img
           class="bottompic"
@@ -33,14 +72,18 @@
           width="100%"
         />-->
       </van-swipe-item>
-      <van-swipe-item @click="num=3, showBox=false">
+      <van-swipe-item @click="(num = 3), (showBox = false)">
         <div
           class="toppic"
-          style="background-image: url(https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/xytd/C1.jpg)"
+          style="
+            background-image: url(https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/xytd/C1.jpg);
+          "
         ></div>
         <div
           class="bottompic"
-          style="background-image: url('https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/xytd/C1.png')"
+          style="
+            background-image: url('https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/xytd/C1.png');
+          "
         >
           <!-- <img
             class="bottompic"
@@ -50,31 +93,45 @@
         </div>
       </van-swipe-item>
     </van-swipe>
-    <div class="qwnav custom-indicator" :class="{'show':showclass}">
-      <!-- <van-icon name="arrow-down" class="topicon" @click="showAll" v-if="open" />
-      <van-icon name="arrow-up" class="topicon" @click="closeAll" v-else />-->
+    <!-- <div class="qwnav custom-indicator" :class="{ show: showclass }">
+      
       <van-grid class="subnav" icon-size="20" :border="false">
         <van-grid-item
-          v-for="(item,index) in navList"
+          v-for="(item, index) in navList"
           :key="index"
           :icon="item.icon"
           :text="item.name"
-          :class="{big:isIndex===index}"
+          :class="{ big: isIndex === index }"
           @click="onChange(index)"
         />
       </van-grid>
-    </div>
+    </div> -->
     <div class="bgpic"></div>
     <van-icon
       name="clear"
       class="close"
       size="40"
-      @click="showBox=true, num=0"
-      v-if="showBox===false"
+      @click="(showBox = true), (num = 0)"
+      v-if="showBox === false"
     />
-    <iframe src="https://720yun.com/t/b8vkcl1e0r9" frameborder="no" class="ifr" v-if="num===1"></iframe>
-    <iframe src="https://720yun.com/t/devksb7hppl" frameborder="no" class="ifr" v-if="num===2"></iframe>
-    <iframe src="https://720yun.com/t/01vkOe8h719" frameborder="no" class="ifr" v-if="num===3"></iframe>
+    <iframe
+      src="https://720yun.com/t/b8vkcl1e0r9"
+      frameborder="no"
+      class="ifr"
+      v-if="num === 1"
+    ></iframe>
+    <iframe
+      src="https://720yun.com/t/devksb7hppl"
+      frameborder="no"
+      class="ifr"
+      v-if="num === 2"
+    ></iframe>
+    <iframe
+      src="https://720yun.com/t/01vkOe8h719"
+      frameborder="no"
+      class="ifr"
+      v-if="num === 3"
+    ></iframe>
   </div>
 </template>
 <script>
@@ -91,17 +148,17 @@ export default {
       navList: [
         {
           icon: "flag-o",
-          name: "B1户型"
+          name: "B1户型",
         },
         {
           icon: "home-o",
-          name: "B2户型"
+          name: "B2户型",
         },
         {
           icon: "user-circle-o",
-          name: "B3户型"
-        }
-      ]
+          name: "C1户型",
+        },
+      ],
     };
   },
   mounted() {},
@@ -117,17 +174,43 @@ export default {
     closeAll() {
       this.showclass = false;
       this.open = true;
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>
 .location {
-  background-color: #333;
+  // background-color: #333;
   position: relative;
   overflow: hidden;
   top: 0;
   height: 100vh;
+  .bg-black {
+    position: absolute;
+    top: 1.25rem;
+    left: 1.25rem;
+    right: 1.25rem;
+    z-index: 8;
+    padding: 0.3rem 0.8rem;
+    // background: rgba($color: #000000, $alpha: 0.3);
+
+    .logo {
+      display: inline-block;
+      width: 10rem;
+      height: 2.8rem;
+      background-image: url("https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/futureCity/futrueLogo.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    .top {
+      color: rgb(245, 228, 202);
+      font-size: 1.6rem;
+      a {
+        color: rgb(245, 228, 202);
+      }
+    }
+  }
+
   .van-swipe {
     position: absolute;
     left: 0;
@@ -142,49 +225,13 @@ export default {
         background-position: bottom;
         background-repeat: no-repeat;
         width: 100% /* 750/16 */;
-        height: 16.8rem /* 500/16 */;
+        height: 19.2rem /* 600/16 */;
+        margin-top: 2rem;
       }
     }
   }
 }
-.qwnav {
-  z-index: 10;
-  opacity: 0;
-  position: absolute;
-  top: 1.5rem;
-  left: 1rem;
-  right: 1rem;
-  height: 3rem;
-  border: 1px solid #ccc;
-  border-radius: 10rem;
-  background-color: rgba($color: #000000, $alpha: 0.6);
-  padding: 0.4rem 0 0.4rem 3.5rem;
-  // &.show {
-  //   height: 3rem;
-  //   .subnav {
-  //     // flex: 1;
-  //     display: inline-block;
-  //   }
-  // }
-  // .subnav {
-  //   display: none;
-  //   color: #ccc;
-  // }
-  .van-grid-item {
-    margin: 0 0.3rem;
-  }
-  /deep/.van-grid-item__content {
-    padding: 0;
-    background: none;
-    .van-grid-item__text {
-      color: #ccc;
-    }
-  }
-  .topicon {
-    font-size: 28px;
-    color: #ccc;
-  }
-}
+
 .activeshow {
   z-index: 9;
   position: absolute;
@@ -199,7 +246,7 @@ export default {
 .bottompic {
   display: inline-block;
   width: 100%;
-  height: 65%;
+  height: 30%;
   margin-top: -0.3rem;
   background-size: cover;
   background-position: bottom;
@@ -208,8 +255,8 @@ export default {
 .bgpic {
   position: absolute;
   width: 100%;
-  height: 65%;
-  top: 16.8rem;
+  height: 30%;
+  top: 21.2rem;
   z-index: 1;
   background-image: url("https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/xytd/huxing.jpg");
   background-size: cover;

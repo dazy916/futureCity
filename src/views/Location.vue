@@ -1,10 +1,17 @@
 <template>
   <div class="location">
-    <van-swipe ref="swiper" :loop="false" :show-indicators="false" @change="onChange">
+    <van-swipe
+      ref="swiper"
+      :loop="false"
+      :show-indicators="false"
+      @change="onChange"
+    >
       <van-swipe-item>
         <div
           class="showimg"
-          style="background-image: url(https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/futureCity/quwei.png);"
+          style="
+            background-image: url(https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/futureCity/quwei.png);
+          "
         ></div>
         <!-- <img
           class="bottompic"
@@ -60,16 +67,20 @@
         />
       </van-swipe-item>
     </van-swipe>
-    <div class="qwnav custom-indicator" :class="{'show':showclass}">
-      <van-icon name="arrow-down" class="topicon" @click="showAll" v-if="open" />
-      <van-icon name="arrow-up" class="topicon" @click="closeAll" v-else />
+    <div class="qwnav custom-indicator" :class="{ show: showclass }">
+      <!-- <van-icon
+        name="arrow-down"
+        class="topicon"
+        @click="showAll"
+        v-if="open"
+      />
+      <van-icon name="arrow-up" class="topicon" @click="closeAll" v-else /> -->
       <van-grid class="subnav" icon-size="20" column-num="1" :border="false">
         <van-grid-item
-          v-for="(item,index) in navList"
+          v-for="(item, index) in navList"
           :key="index"
-          :icon="item.icon"
           :text="item.name"
-          :class="{big:isIndex===index}"
+          :class="{ big: isIndex === index }"
           @click="onChange(index)"
         />
       </van-grid>
@@ -95,25 +106,25 @@ export default {
       navList: [
         {
           icon: "flag-o",
-          name: "交通配套"
-        },
-        {
-          icon: "home-o",
-          name: "市政配套"
-        },
-        {
-          icon: "user-circle-o",
-          name: "教育配套"
+          name: "交通配套",
         },
         {
           icon: "hotel-o",
-          name: "医疗配套"
+          name: "医疗配套",
+        },
+        {
+          icon: "user-circle-o",
+          name: "教育配套",
+        },
+        {
+          icon: "car-o",
+          name: "商业配套",
         },
         {
           icon: "goods-collect-o",
-          name: "休闲配套"
-        }
-      ]
+          name: "休闲配套",
+        },
+      ],
     };
   },
   mounted() {},
@@ -129,8 +140,8 @@ export default {
     closeAll() {
       this.showclass = false;
       this.open = true;
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>
@@ -147,28 +158,32 @@ export default {
   position: absolute;
   top: 1rem;
   left: 1rem;
-  width: 2rem;
-  height: 2rem;
-  border: 1px solid #ccc;
+  width: 6rem;
   border-radius: 10rem;
-  background-color: rgba($color: #000000, $alpha: 0.6);
   padding: 0.4rem;
   &.show {
-    height: 35rem;
+    height: 15rem;
     .subnav {
       flex: 1;
       display: inherit;
     }
   }
   .subnav {
-    display: none;
-    color: #ccc;
+    // display: none;
+    color: #fff;
+  }
+  /deep/.van-grid-item {
+    border-radius: 1.5rem;
+    background-color: rgba($color: #22364a, $alpha: 0.6);
+    margin: 0.25rem 0;
+    padding: 0.25rem 1rem;
+    border: 1px solid #ccc;
   }
   /deep/.van-grid-item__content {
     padding: 0;
     background: none;
     .van-grid-item__text {
-      color: #ccc;
+      color: #fff;
     }
   }
   .topicon {
@@ -182,6 +197,7 @@ export default {
   position: absolute;
 }
 .big {
+  background-color: #22364a !important;
   font-weight: bold;
   color: rgb(245, 228, 202) !important;
   /deep/.van-grid-item__text {
