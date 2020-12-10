@@ -91,15 +91,15 @@ export default {
       navList: [
         {
           icon: "flag-o",
-          name: "A1户型"
+          name: "B1户型"
         },
         {
           icon: "home-o",
-          name: "A1户型"
+          name: "B2户型"
         },
         {
           icon: "user-circle-o",
-          name: "C1户型"
+          name: "B3户型"
         }
       ]
     };

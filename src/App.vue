@@ -35,7 +35,7 @@
       <van-tabbar-item icon="flower-o">
         <router-link to="/gardens">园林漫游</router-link>
       </van-tabbar-item>
-      <van-tabbar-item icon="logistics">
+      <van-tabbar-item icon="location-o">
         <router-link to="/location">区位交通</router-link>
       </van-tabbar-item>
       <van-tabbar-item icon="wap-home-o">
