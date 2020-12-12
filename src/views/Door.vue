@@ -9,7 +9,7 @@
       <van-col>
         <div class="logo"></div>
       </van-col>
-      <van-col span="12">
+      <!-- <van-col span="12">
         <van-row type="flex" justify="end" class="top" gutter="20">
           <van-col>
             <a href="tel:028-62577777">
@@ -17,7 +17,7 @@
             </a>
           </van-col>
           <van-col>
-            <!-- <a href="http://j.map.baidu.com/29/Kj8"> -->
+            
             <a
               href="https://map.baidu.com/poi/%E5%BD%AD%E5%B7%9E%E4%B8%87%E8%BE%BE%E5%B9%BF%E5%9C%BA%E8%90%A5%E9%94%80%E4%B8%AD%E5%BF%83/@11573795.195,3611603.14,19z?uid=efe7fe8242e04011afcb6687&ugc_type=3&ugc_ver=1&device_ratio=1&compat=1&querytype=detailConInfo&da_src=shareurl"
             >
@@ -25,7 +25,7 @@
             </a>
           </van-col>
         </van-row>
-      </van-col>
+      </van-col> -->
     </van-row>
     <van-swipe
       ref="swiper"
@@ -33,7 +33,7 @@
       :show-indicators="false"
       @change="onChange"
     >
-      <van-swipe-item @click="(num = 1), (showBox = false)">
+      <van-swipe-item>
         <div
           class="toppic"
           style="
@@ -53,7 +53,7 @@
           />-->
         </div>
       </van-swipe-item>
-      <van-swipe-item @click="(num = 2), (showBox = false)">
+      <van-swipe-item>
         <div
           class="toppic"
           style="
@@ -72,7 +72,7 @@
           width="100%"
         />-->
       </van-swipe-item>
-      <van-swipe-item @click="(num = 3), (showBox = false)">
+      <van-swipe-item>
         <div
           class="toppic"
           style="
@@ -93,25 +93,23 @@
         </div>
       </van-swipe-item>
     </van-swipe>
-    <!-- <div class="qwnav custom-indicator" :class="{ show: showclass }">
-      
-      <van-grid class="subnav" icon-size="20" :border="false">
-        <van-grid-item
-          v-for="(item, index) in navList"
-          :key="index"
-          :icon="item.icon"
-          :text="item.name"
-          :class="{ big: isIndex === index }"
-          @click="onChange(index)"
-        />
-      </van-grid>
-    </div> -->
-    <div class="bgpic"></div>
+    <div class="bgpic">
+      <div class="container animation-3">
+        <div class="shape shape1"></div>
+        <div class="shape shape2"></div>
+        <div class="shape shape3"></div>
+        <div class="shape shape4"></div>
+      </div>
+      <div class="vr" @click="(num = isIndex + 1), (showBox = false)">
+        VR浏览{{ num }}
+      </div>
+    </div>
+
     <van-icon
       name="clear"
       class="close"
       size="40"
-      @click="(showBox = true), (num = 0)"
+      @click="(showBox = true), (num = null)"
       v-if="showBox === false"
     />
     <iframe
@@ -144,7 +142,7 @@ export default {
       showclass: true,
       open: false,
       isIndex: 0,
-      num: 0,
+      num: null,
       navList: [
         {
           icon: "flag-o",
@@ -187,9 +185,9 @@ export default {
   height: 100vh;
   .bg-black {
     position: absolute;
-    top: 1.25rem;
-    left: 1.25rem;
-    right: 1.25rem;
+    top: 1rem;
+    left: 0.5rem;
+    right: 0.5rem;
     z-index: 8;
     padding: 0.3rem 0.8rem;
     // background: rgba($color: #000000, $alpha: 0.3);
@@ -197,8 +195,8 @@ export default {
     .logo {
       display: inline-block;
       width: 10rem;
-      height: 2.8rem;
-      background-image: url("https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/futureCity/futrueLogo.png");
+      height: 3.8rem;
+      background-image: url("https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/futureCity/logo.png");
       background-size: contain;
       background-repeat: no-repeat;
     }
@@ -225,8 +223,8 @@ export default {
         background-position: bottom;
         background-repeat: no-repeat;
         width: 100% /* 750/16 */;
-        height: 19.2rem /* 600/16 */;
-        margin-top: 2rem;
+        height: 18.5rem /* 600/16 */;
+        margin-top: 2.8rem;
       }
     }
   }
@@ -262,6 +260,18 @@ export default {
   background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;
+  .vr {
+    position: absolute;
+    top: 92%;
+    left: 50%;
+    z-index: 11;
+    margin-left: -2rem;
+    width: 4rem;
+    height: 4rem;
+    line-height: 4rem;
+    border-radius: 50%;
+    background-color: #fff;
+  }
 }
 .ifr {
   position: absolute;
@@ -279,5 +289,87 @@ export default {
   right: 2rem;
   top: 1rem;
   color: #fff;
+}
+@keyframes animation3shape1 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(5px, 5px);
+  }
+}
+@keyframes animation3shape2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-5px, 5px);
+  }
+}
+@keyframes animation3shape3 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(5px, -5px);
+  }
+}
+@keyframes animation3shape4 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-5px, -5px);
+  }
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.container {
+  margin-left: -2rem;
+  width: 4.2rem;
+  height: 4.2rem;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  z-index: 12;
+  animation: rotation 1s infinite;
+  .shape {
+    position: absolute;
+    width: 0.3rem;
+    height: 1rem;
+    border-radius: 1px;
+  }
+  .shape1 {
+    left: 0;
+    background-color: #5c6bc0;
+    border-top-left-radius: 10px;
+    animation: animation3shape1 0.5s ease 0s infinite alternate;
+  }
+  .shape.shape2 {
+    right: 0;
+    background-color: #8bc34a;
+    border-top-right-radius: 10px;
+    animation: animation3shape2 0.5s ease 0s infinite alternate;
+  }
+  .shape.shape3 {
+    bottom: 0;
+    background-color: #ffb74d;
+    border-bottom-left-radius: 10px;
+    animation: animation3shape3 0.5s ease 0s infinite alternate;
+  }
+
+  .shape4 {
+    bottom: 0;
+    right: 0;
+    background-color: #f44336;
+    border-bottom-right-radius: 10px;
+    animation: animation3shape4 0.5s ease 0s infinite alternate;
+  }
 }
 </style>

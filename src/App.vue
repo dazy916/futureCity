@@ -70,18 +70,18 @@ export default {
 }
 .bg-black {
   position: absolute;
-  top: 1.25rem;
-  left: 1.25rem;
-  right: 1.25rem;
+  top: 1rem;
+  left: 0.5rem;
+  right: 0.5rem;
   z-index: 30;
   padding: 0.3rem 0.8rem;
   // background: rgba($color: #000000, $alpha: 0.3);
 
   .logo {
     display: inline-block;
-    width: 10rem;
-    height: 2.8rem;
-    background-image: url("https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/futureCity/futrueLogo.png");
+    width: 10rem /* 500/16 */;
+    height: 6.26rem /* 313/16 */;
+    background-image: url("https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/futureCity/logo-white.png");
     background-size: contain;
     background-repeat: no-repeat;
   }

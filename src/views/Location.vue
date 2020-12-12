@@ -219,7 +219,7 @@ export default {
   z-index: 1;
   width: 100%;
   height: 25rem /* 400/16 */;
-  background-size: cover;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 }
