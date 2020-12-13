@@ -264,13 +264,14 @@ export default {
     position: absolute;
     top: 92%;
     left: 50%;
-    z-index: 11;
-    margin-left: -2rem;
-    width: 4rem;
-    height: 4rem;
-    line-height: 4rem;
+    z-index: 13;
+    margin-left: -1.7rem;
+    width: 3.4rem;
+    height: 3.4rem;
+    line-height: 3.4rem;
     border-radius: 50%;
     background-color: #fff;
+    font-size: 0.875rem /* 14/16 */;
   }
 }
 .ifr {
@@ -332,8 +333,8 @@ export default {
 }
 .container {
   margin-left: -2rem;
-  width: 4.2rem;
-  height: 4.2rem;
+  width: 4rem;
+  height: 4rem;
   position: absolute;
   top: 90%;
   left: 50%;
@@ -341,25 +342,26 @@ export default {
   animation: rotation 1s infinite;
   .shape {
     position: absolute;
-    width: 0.3rem;
-    height: 1rem;
-    border-radius: 1px;
+    width: 1.6rem;
+    height: 1.6rem;
+    border: 0.1rem solid #ffb74d;
+    border-radius: 50%;
   }
   .shape1 {
     left: 0;
-    background-color: #5c6bc0;
+    // border-color: #5c6bc0;
     border-top-left-radius: 10px;
     animation: animation3shape1 0.5s ease 0s infinite alternate;
   }
   .shape.shape2 {
     right: 0;
-    background-color: #8bc34a;
+    // border-color: #8bc34a;
     border-top-right-radius: 10px;
     animation: animation3shape2 0.5s ease 0s infinite alternate;
   }
   .shape.shape3 {
     bottom: 0;
-    background-color: #ffb74d;
+    // border-color: #ffb74d;
     border-bottom-left-radius: 10px;
     animation: animation3shape3 0.5s ease 0s infinite alternate;
   }
@@ -367,7 +369,7 @@ export default {
   .shape4 {
     bottom: 0;
     right: 0;
-    background-color: #f44336;
+    // border-color: #f44336;
     border-bottom-right-radius: 10px;
     animation: animation3shape4 0.5s ease 0s infinite alternate;
   }
