@@ -85,14 +85,22 @@ export default {
     background-size: contain;
     background-repeat: no-repeat;
   }
-  .top {
-    color: rgb(245, 228, 202);
-    font-size: 1.6rem;
+  
+}
+.top {
+  position: absolute;
+  bottom: 5rem;
+  right: 1rem;
+  width: 2rem;
+  z-index: 13;
+    color: #ffffff;
+    font-size: 2rem;
     a {
-      color: rgb(245, 228, 202);
+      display: inline-block;
+      margin-bottom: 2rem;
+      color:#ffffff;
     }
   }
-}
 .van-tabbar {
   z-index: 10 !important;
   left: 1.25rem !important;

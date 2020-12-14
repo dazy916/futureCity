@@ -9,28 +9,11 @@
       <van-col>
         <div class="logo"></div>
       </van-col>
-      <!-- <van-col span="12">
-        <van-row type="flex" justify="end" class="top" gutter="20">
-          <van-col>
-            <a href="tel:028-62577777">
-              <van-icon name="phone-circle-o" />
-            </a>
-          </van-col>
-          <van-col>
-            
-            <a
-              href="https://map.baidu.com/poi/%E5%BD%AD%E5%B7%9E%E4%B8%87%E8%BE%BE%E5%B9%BF%E5%9C%BA%E8%90%A5%E9%94%80%E4%B8%AD%E5%BF%83/@11573795.195,3611603.14,19z?uid=efe7fe8242e04011afcb6687&ugc_type=3&ugc_ver=1&device_ratio=1&compat=1&querytype=detailConInfo&da_src=shareurl"
-            >
-              <van-icon name="location-o" />
-            </a>
-          </van-col>
-        </van-row>
-      </van-col> -->
     </van-row>
     <van-swipe
       ref="swiper"
-      :loop="false"
-      :show-indicators="false"
+      :loop="true"
+      touchable
       @change="onChange"
     >
       <van-swipe-item>
@@ -46,11 +29,6 @@
             background-image: url(https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/xytd/A1.png);
           "
         >
-          <!-- <img
-            class="bottompic"
-            src="https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/xytd/A1.png"
-            width="100%"
-          />-->
         </div>
       </van-swipe-item>
       <van-swipe-item>
@@ -66,11 +44,6 @@
             background-image: url(https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/xytd/A2.png);
           "
         ></div>
-        <!-- <img
-          class="bottompic"
-          src="https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/xytd/A2.png"
-          width="100%"
-        />-->
       </van-swipe-item>
       <van-swipe-item>
         <div
@@ -85,13 +58,13 @@
             background-image: url('https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/xytd/C1.png');
           "
         >
-          <!-- <img
-            class="bottompic"
-            src="https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/xytd/C1.png"
-            width="100%"
-          />-->
         </div>
       </van-swipe-item>
+      <div class="custom-indicator" slot="indicator">
+        <div class="round" @click="toIndex(0)"></div>
+        <div class="round" @click="toIndex(1)"></div>
+        <div class="round" @click="toIndex(2)"></div>
+      </div>
     </van-swipe>
     <div class="bgpic">
       <div class="container animation-3">
@@ -138,7 +111,6 @@ export default {
     return {
       show: 0,
       showBox: true,
-      current: null,
       showclass: true,
       open: false,
       isIndex: 0,
@@ -165,6 +137,9 @@ export default {
       this.$refs.swiper.swipeTo(index);
       this.isIndex = index;
     },
+    toIndex(b){
+      this.$refs.swiper.swipeTo(b);
+    },
     showAll() {
       this.showclass = true;
       this.open = false;
@@ -173,6 +148,7 @@ export default {
       this.showclass = false;
       this.open = true;
     },
+    
   },
 };
 </script>
@@ -216,6 +192,21 @@ export default {
     height: 100%;
     overflow: visible;
     z-index: 2;
+    .custom-indicator{
+      position: absolute;
+      top: 5.8rem;
+      left: 5.7rem;
+      width: 30rem;
+      font-size: 10rem;
+      display: flex;
+      .round{
+        width: 3.2rem;
+        height: 3.2rem;
+        border-radius: 50%;
+        background-color: none;
+        margin-right: 2.1rem;
+      }
+    }
     .van-swipe-item {
       .toppic {
         display: inline-block;

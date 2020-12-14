@@ -10,7 +10,17 @@
         <div class="logo"></div>
       </van-col>
       <van-col span="12">
-        <van-row type="flex" justify="end" class="top" gutter="20">
+        
+      </van-col>
+    </van-row>
+    <div class="home">
+      <iframe
+        src="https://720yun.com/t/11vkclqb7ib"
+        frameborder="no"
+        class="ifr"
+      ></iframe>
+    </div>
+    <van-row  class="top">
           <van-col>
             <a href="tel:028-62577777">
               <van-icon name="phone-circle-o" />
@@ -25,15 +35,6 @@
             </a>
           </van-col>
         </van-row>
-      </van-col>
-    </van-row>
-    <div class="home">
-      <iframe
-        src="https://720yun.com/t/11vkclqb7ib"
-        frameborder="no"
-        class="ifr"
-      ></iframe>
-    </div>
   </div>
 </template>
 
