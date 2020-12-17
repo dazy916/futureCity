@@ -22,9 +22,13 @@
     </div>
     <van-row  class="top">
           <van-col>
-            <a href="tel:028-62577777">
-              <van-icon name="phone-circle-o" />
-            </a>
+              <van-icon name="phone-circle-o" @click="show = true"/>
+           <van-popup v-model="show">
+              <van-contact-card type="edit" name="张三" tel="13000000000" :editable="false" />
+              <van-contact-card type="edit" name="张三" tel="13000000000" :editable="false" />
+              <van-contact-card type="edit" name="张三" tel="13000000000" :editable="false" />
+              <van-contact-card type="edit" name="张三" tel="13000000000" :editable="false" />
+           </van-popup>
           </van-col>
           <van-col>
             <!-- <a href="http://j.map.baidu.com/29/Kj8"> -->
@@ -35,13 +39,20 @@
             </a>
           </van-col>
         </van-row>
+        
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 
-export default {};
+export default {
+  data(){
+    return{
+      show:false
+    }
+  }
+};
 </script>
 <style lang="scss" scoped>
 .home {

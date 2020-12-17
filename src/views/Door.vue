@@ -26,7 +26,7 @@
         <div
           class="bottompic"
           style="
-            background-image: url(https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/xytd/A1.png);
+            background-image: url(https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/futureCity/B1.png);
           "
         >
         </div>
@@ -41,7 +41,7 @@
         <div
           class="bottompic"
           style="
-            background-image: url(https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/xytd/A2.png);
+            background-image: url(https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/futureCity/B2.png);
           "
         ></div>
       </van-swipe-item>
@@ -55,29 +55,26 @@
         <div
           class="bottompic"
           style="
-            background-image: url('https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/xytd/C1.png');
+            background-image: url('https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/futureCity/C1.png');
           "
         >
         </div>
       </van-swipe-item>
       <div class="custom-indicator" slot="indicator">
-        <div class="round" @click="toIndex(0)"></div>
-        <div class="round" @click="toIndex(1)"></div>
-        <div class="round" @click="toIndex(2)"></div>
+        <div class="round" @click="onChange(0)"></div>
+        <div class="round" @click="onChange(1)"></div>
+        <div class="round" @click="onChange(2)"></div>
       </div>
-    </van-swipe>
-    <div class="bgpic">
-      <div class="container animation-3">
+     <div class="container animation-3">
         <div class="shape shape1"></div>
         <div class="shape shape2"></div>
         <div class="shape shape3"></div>
         <div class="shape shape4"></div>
       </div>
-      <div class="vr" @click="(num = isIndex + 1), (showBox = false)">
-        VR浏览{{ num }}
+    </van-swipe>
+      <div class="vr" @click="toIndex">
+        VR浏览
       </div>
-    </div>
-
     <van-icon
       name="clear"
       class="close"
@@ -114,7 +111,7 @@ export default {
       showclass: true,
       open: false,
       isIndex: 0,
-      num: null,
+      num: 0,
       navList: [
         {
           icon: "flag-o",
@@ -137,8 +134,10 @@ export default {
       this.$refs.swiper.swipeTo(index);
       this.isIndex = index;
     },
-    toIndex(b){
-      this.$refs.swiper.swipeTo(b);
+    toIndex(){
+      console.log(123)
+     this.num = this.isIndex+1
+     this.showBox = false
     },
     showAll() {
       this.showclass = true;
@@ -176,13 +175,7 @@ export default {
       background-size: contain;
       background-repeat: no-repeat;
     }
-    .top {
-      color: rgb(245, 228, 202);
-      font-size: 1.6rem;
-      a {
-        color: rgb(245, 228, 202);
-      }
-    }
+    
   }
 
   .van-swipe {
@@ -193,18 +186,19 @@ export default {
     overflow: visible;
     z-index: 2;
     .custom-indicator{
-      position: absolute;
-      top: 5.8rem;
-      left: 5.7rem;
+      position: fixed;
+      top: 13%;
+      left: 18%;
       width: 30rem;
       font-size: 10rem;
       display: flex;
       .round{
-        width: 3.2rem;
-        height: 3.2rem;
+        width: 5.2rem;
+        height: 5.2rem;
         border-radius: 50%;
         background-color: none;
-        margin-right: 2.1rem;
+        margin-right: 0;
+        // background: red;
       }
     }
     .van-swipe-item {
@@ -235,7 +229,7 @@ export default {
 .bottompic {
   display: inline-block;
   width: 100%;
-  height: 30%;
+  height: 32%;
   margin-top: -0.3rem;
   background-size: cover;
   background-position: bottom;
@@ -244,18 +238,20 @@ export default {
 .bgpic {
   position: absolute;
   width: 100%;
-  height: 30%;
+  height: 35%;
   top: 21.2rem;
   z-index: 1;
-  background-image: url("https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/xytd/huxing.jpg");
-  background-size: cover;
-  background-position: bottom;
-  background-repeat: no-repeat;
-  .vr {
+  // background-image: url("https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/futureCity/xiaoqu");
+  // background-size: cover;
+  // background-position: bottom;
+  // background-repeat: no-repeat;
+  
+}
+.vr {
     position: absolute;
-    top: 92%;
+    top: 70%;
     left: 50%;
-    z-index: 13;
+    z-index: 8;
     margin-left: -1.7rem;
     width: 3.4rem;
     height: 3.4rem;
@@ -264,7 +260,6 @@ export default {
     background-color: #fff;
     font-size: 0.875rem /* 14/16 */;
   }
-}
 .ifr {
   position: absolute;
   top: 0;
@@ -327,9 +322,9 @@ export default {
   width: 4rem;
   height: 4rem;
   position: absolute;
-  top: 90%;
+  top: 69.5%;
   left: 50%;
-  z-index: 12;
+  z-index: 13;
   animation: rotation 1s infinite;
   .shape {
     position: absolute;

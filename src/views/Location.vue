@@ -10,7 +10,7 @@
         <div
           class="showimg"
           style="
-            background-image: url(https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/futureCity/quwei.png);
+            background-image: url(https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/futureCity/newquwei);
           "
         ></div>
         <!-- <img

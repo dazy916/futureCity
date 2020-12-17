@@ -19,9 +19,9 @@
       <van-tabbar-item icon="flower-o">
         <router-link to="/gardens">园林漫游</router-link>
       </van-tabbar-item>
-      <!-- <van-tabbar-item icon="comment-circle-o">
-        <router-link to="/copyright">版权声明</router-link>
-      </van-tabbar-item> -->
+      <van-tabbar-item icon="comment-circle-o">
+        <router-link to="/copyright">免责条款</router-link>
+      </van-tabbar-item>
     </van-tabbar>
 
     <!-- <div id="nav">
@@ -97,7 +97,7 @@ export default {
     font-size: 2rem;
     a {
       display: inline-block;
-      margin-bottom: 2rem;
+      margin-top: 2rem;
       color:#ffffff;
     }
   }
