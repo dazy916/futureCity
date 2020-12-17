@@ -6,29 +6,24 @@
       width="3.2rem"
       src="https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/futureCity/icon-bar.png"
     /> -->
-    <van-tabbar v-model="active">
-      <van-tabbar-item icon="photo-o">
-        <router-link to="/">全景鸟瞰</router-link>
+    <van-tabbar v-model="active" @change="onChange" route="true">
+      <van-tabbar-item replace to="/" icon="photo-o">
+        全景鸟瞰
       </van-tabbar-item>
-      <van-tabbar-item icon="location-o">
-        <router-link to="/location">区位交通</router-link>
+      <van-tabbar-item replace to="/location" icon="location-o">
+        区位交通
       </van-tabbar-item>
-      <van-tabbar-item icon="wap-home-o">
-        <router-link to="/door">户型鉴赏</router-link>
+      <van-tabbar-item replace to="/door" icon="wap-home-o">
+        户型鉴赏
       </van-tabbar-item>
-      <van-tabbar-item icon="flower-o">
-        <router-link to="/gardens">园林漫游</router-link>
+      <van-tabbar-item replace to="/gardens" icon="flower-o">
+        园林漫游
       </van-tabbar-item>
-      <van-tabbar-item icon="comment-circle-o">
-        <router-link to="/copyright">免责条款</router-link>
+      <van-tabbar-item replace to="/copyright" icon="comment-circle-o">
+        免责条款
       </van-tabbar-item>
     </van-tabbar>
 
-    <!-- <div id="nav">
-     
-      
-      
-    </div>-->
   </div>
 </template>
 <script>
@@ -38,6 +33,11 @@ export default {
       active: 0,
     };
   },
+  methods:{
+    onChange(index) {
+      this.active=index
+    },
+  }
 };
 </script>
 <style lang="scss">
@@ -103,9 +103,9 @@ export default {
   }
 .van-tabbar {
   z-index: 10 !important;
-  left: 1.25rem !important;
-  right: 1.25rem !important;
-  bottom: 1.25rem !important;
+  left: 1rem !important;
+  right: 1rem !important;
+  bottom: 1rem !important;
   width: auto !important;
   border-radius: 1.5rem;
   background-color: rgba($color: #22364a, $alpha: 0.4) !important;
@@ -118,8 +118,8 @@ export default {
     color: #fff;
   }
 }
-/deep/.van-hairline--top-bottom::after,
-/deep/.van-hairline-unset--top-bottom::after {
+.van-hairline--top-bottom::after,
+.van-hairline-unset--top-bottom::after {
   border: 0 !important;
 }
 .van-tabbar-item--active {

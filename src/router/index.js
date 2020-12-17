@@ -13,12 +13,12 @@ const routes = [
   {
     path: '/gardens',
     name: 'Gardens',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Gardens.vue')
+    component: () => import(/* webpackChunkName: "gardens" */ '../views/Gardens.vue')
   },
   {
     path: '/location',
     name: 'Location',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Location.vue')
+    component: () => import(/* webpackChunkName: "location" */ '../views/Location.vue')
   },
   {
     path: '/door',

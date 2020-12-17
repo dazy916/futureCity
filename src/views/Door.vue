@@ -65,16 +65,19 @@
         <div class="round" @click="onChange(1)"></div>
         <div class="round" @click="onChange(2)"></div>
       </div>
+    </van-swipe>
+    <div class="bgpic">
      <div class="container animation-3">
         <div class="shape shape1"></div>
         <div class="shape shape2"></div>
         <div class="shape shape3"></div>
         <div class="shape shape4"></div>
       </div>
-    </van-swipe>
+      
       <div class="vr" @click="toIndex">
         VR浏览
       </div>
+    </div>
     <van-icon
       name="clear"
       class="close"
@@ -238,9 +241,9 @@ export default {
 .bgpic {
   position: absolute;
   width: 100%;
-  height: 35%;
-  top: 21.2rem;
-  z-index: 1;
+  // height: 35%;
+  top: 71%;
+  z-index:6;
   // background-image: url("https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/futureCity/xiaoqu");
   // background-size: cover;
   // background-position: bottom;
@@ -266,7 +269,7 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 9;
+  z-index: 19;
   width: 100%;
   height: 100%;
 }
@@ -324,7 +327,7 @@ export default {
   position: absolute;
   top: 69.5%;
   left: 50%;
-  z-index: 13;
+  z-index: 7;
   animation: rotation 1s infinite;
   .shape {
     position: absolute;

@@ -25,11 +25,11 @@
           style="background-image: url(https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/xytd/sz.png);"
         ></div>-->
 
-        <img
+        <!-- <img
           class="bottompic"
           src="https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/xytd/sz.png"
           width="100%"
-        />
+        /> -->
       </van-swipe-item>
       <van-swipe-item>
         <!-- <div
@@ -37,11 +37,11 @@
           style="background-image: url(https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/xytd/jy.png);"
         ></div>-->
 
-        <img
+        <!-- <img
           class="bottompic"
           src="https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/xytd/jy.png"
           width="100%"
-        />
+        /> -->
       </van-swipe-item>
       <van-swipe-item>
         <!-- <div
@@ -49,33 +49,27 @@
           style="background-image: url(https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/xytd/yl.png);"
         ></div>-->
 
-        <img
+        <!-- <img
           class="bottompic"
           src="https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/xytd/yl.png"
           width="100%"
-        />
+        /> -->
       </van-swipe-item>
       <van-swipe-item>
         <!-- <div
           class="showimg"
           style="background-image: url(https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/xytd/xx.png);"
         ></div>-->
-        <img
+        <!-- <img
           class="bottompic"
           src="https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/xytd/xx.png"
           width="100%"
-        />
+        /> -->
       </van-swipe-item>
     </van-swipe>
     <div class="qwnav custom-indicator" :class="{ show: showclass }">
-      <!-- <van-icon
-        name="arrow-down"
-        class="topicon"
-        @click="showAll"
-        v-if="open"
-      />
-      <van-icon name="arrow-up" class="topicon" @click="closeAll" v-else /> -->
-      <van-grid class="subnav" icon-size="20" column-num="1" :border="false">
+     
+      <van-grid class="subnav" icon-size="20" column-num="5" :border="false">
         <van-grid-item
           v-for="(item, index) in navList"
           :key="index"
@@ -130,7 +124,7 @@ export default {
   mounted() {},
   methods: {
     onChange(index) {
-      this.$refs.swiper.swipeTo(index);
+      // this.$refs.swiper.swipeTo(index);
       this.isIndex = index;
     },
     showAll() {
@@ -154,13 +148,14 @@ export default {
 .qwnav {
   z-index: 10;
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: row nowrap;
   position: absolute;
-  top: 1rem;
-  left: 1rem;
-  width: 6rem;
+  top: 4rem;
+  // right: .6rem;
+  width: 100%;
+  justify-content: space-around;
   border-radius: 10rem;
-  padding: 0.4rem;
+  // padding: 0.2rem;
   &.show {
     height: 15rem;
     .subnav {
@@ -176,7 +171,7 @@ export default {
     border-radius: 1.5rem;
     background-color: rgba($color: #22364a, $alpha: 0.6);
     margin: 0.25rem 0;
-    padding: 0.25rem 1rem;
+    padding: 0.25rem .5rem;
     border: 1px solid #ccc;
   }
   /deep/.van-grid-item__content {
@@ -209,7 +204,7 @@ export default {
   width: 100%;
   height: 100%;
   background-size: cover;
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
 }
 .bg {
