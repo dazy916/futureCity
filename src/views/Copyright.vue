@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <van-image width="100%" src="https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/xytd/js.png" />
+    <van-image width="100%" src="https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/futureCity/js.png" />
     <!-- <van-divider
       content-position="left"
       :style="{ fontSize:'24px',color: '#1989fa', borderColor: '#1989fa', padding: '0 16px' }"

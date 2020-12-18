@@ -78,15 +78,18 @@
         VR浏览
       </div>
     </div>
-    <van-icon
+    <div class="close"
+    @click="(showBox = true), (num = null)"
+      v-if="showBox === false">返回</div>
+    <!-- <van-icon
       name="clear"
       class="close"
       size="40"
       @click="(showBox = true), (num = null)"
       v-if="showBox === false"
-    />
+    /> -->
     <iframe
-      src="https://720yun.com/t/b8vkcl1e0r9"
+      src="https://720yun.com/t/e7vkce7wg2q"
       frameborder="no"
       class="ifr"
       v-if="num === 1"
@@ -98,7 +101,7 @@
       v-if="num === 2"
     ></iframe>
     <iframe
-      src="https://720yun.com/t/01vkOe8h719"
+      src="https://720yun.com/t/72vkce7wd7y"
       frameborder="no"
       class="ifr"
       v-if="num === 3"
@@ -276,9 +279,12 @@ export default {
 .close {
   z-index: 100;
   position: absolute;
-  right: 2rem;
-  top: 1rem;
+  left: 0;
+  top: 3rem;
   color: #fff;
+  background-color: salmon;
+  font-size: .875rem /* 14/16 */;
+  padding: .3125rem  .9375rem ;
 }
 @keyframes animation3shape1 {
   0% {

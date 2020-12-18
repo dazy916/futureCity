@@ -10,9 +10,9 @@
       <van-tabbar-item replace to="/" icon="photo-o">
         全景鸟瞰
       </van-tabbar-item>
-      <van-tabbar-item replace to="/location" icon="location-o">
+      <!-- <van-tabbar-item replace to="/location" icon="location-o">
         区位交通
-      </van-tabbar-item>
+      </van-tabbar-item> -->
       <van-tabbar-item replace to="/door" icon="wap-home-o">
         户型鉴赏
       </van-tabbar-item>
@@ -79,11 +79,12 @@ export default {
 
   .logo {
     display: inline-block;
-    width: 10rem /* 500/16 */;
+    width: 8rem /* 500/16 */;
     height: 6.26rem /* 313/16 */;
     background-image: url("https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/futureCity/logo-white.png");
     background-size: contain;
     background-repeat: no-repeat;
+    // box-shadow: 0px 0px 0.5rem #22364a;
   }
   
 }
