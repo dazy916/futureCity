@@ -95,7 +95,7 @@
       v-if="num === 1"
     ></iframe>
     <iframe
-      src="https://720yun.com/t/devksb7hppl"
+      src="https://720yun.com/t/b8vkcl1e0r9"
       frameborder="no"
       class="ifr"
       v-if="num === 2"
