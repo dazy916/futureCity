@@ -23,7 +23,6 @@
         免责条款
       </van-tabbar-item>
     </van-tabbar>
-
   </div>
 </template>
 <script>
@@ -33,11 +32,11 @@ export default {
       active: 0,
     };
   },
-  methods:{
+  methods: {
     onChange(index) {
-      this.active=index
+      this.active = index;
     },
-  }
+  },
 };
 </script>
 <style lang="scss">
@@ -86,7 +85,6 @@ export default {
     background-repeat: no-repeat;
     // box-shadow: 0px 0px 0.5rem #22364a;
   }
-  
 }
 .top {
   position: absolute;
@@ -94,14 +92,14 @@ export default {
   right: 1rem;
   width: 2rem;
   z-index: 13;
+  color: #ffffff;
+  font-size: 2rem;
+  i {
+    display: inline-block;
+    margin-top: 2rem;
     color: #ffffff;
-    font-size: 2rem;
-    a {
-      display: inline-block;
-      margin-top: 2rem;
-      color:#ffffff;
-    }
   }
+}
 .van-tabbar {
   z-index: 10 !important;
   left: 1rem !important;
