@@ -71,7 +71,7 @@ export default {
 .bg-black {
   position: absolute;
   top: 1rem;
-  left: 0.5rem;
+  right: 0.5rem;
   right: 0.5rem;
   z-index: 30;
   padding: 0.3rem 0.8rem;

@@ -22,18 +22,16 @@
     </div>
     <van-row  class="top">
           <van-col>
-              <van-icon name="phone-circle-o" @click="show = true"/>
-           <van-popup v-model="show">
-              <van-contact-card type="edit" name="张三" tel="13000000000" :editable="false" />
-              <van-contact-card type="edit" name="张三" tel="13000000000" :editable="false" />
-              <van-contact-card type="edit" name="张三" tel="13000000000" :editable="false" />
-              <van-contact-card type="edit" name="张三" tel="13000000000" :editable="false" />
-           </van-popup>
+            <van-icon name="phone-circle-o" @click="show = true"/>
+            <van-popup v-model="show" :style="{ maxHeight: '40%' }">
+                <van-contact-card type="edit" :name="item.name" :tel="item.tel"  @click="call(item.tel)" v-for="(item,index) in person" :key="index"/>
+                <!-- <van-contact-card type="edit" name="张三" tel="13000000000" :editable="false" /> -->
+            </van-popup> 
           </van-col>
           <van-col>
             <!-- <a href="http://j.map.baidu.com/29/Kj8"> -->
             <a
-              href="https://map.baidu.com/poi/%E5%BD%AD%E5%B7%9E%E4%B8%87%E8%BE%BE%E5%B9%BF%E5%9C%BA%E8%90%A5%E9%94%80%E4%B8%AD%E5%BF%83/@11573795.195,3611603.14,19z?uid=efe7fe8242e04011afcb6687&ugc_type=3&ugc_ver=1&device_ratio=1&compat=1&querytype=detailConInfo&da_src=shareurl"
+              href="https://map.baidu.com/poi/%E4%BA%94%E7%9F%BF%E6%9C%AA%E6%9D%A5%E5%9F%8E/@11551602.49,3547751.075,19z?uid=7332093ccc8d7ae142d63ea8&ugc_type=3&ugc_ver=1&device_ratio=1&compat=1&querytype=detailConInfo&da_src=shareurl"
             >
               <van-icon name="location-o" />
             </a>
@@ -49,7 +47,17 @@
 export default {
   data(){
     return{
-      show:false
+      show:false,
+      person:[{
+        name:'王嘉',
+        tel:'13550179089'
+      }]
+    }
+  },
+  methods:{
+    call(val){
+      console.log(val)
+      window.location.href = 'tel:'+val
     }
   }
 };
