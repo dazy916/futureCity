@@ -10,12 +10,7 @@
         <div class="logo"></div>
       </van-col>
     </van-row>
-    <van-swipe
-      ref="swiper"
-      :loop="true"
-      touchable
-      @change="onChange"
-    >
+    <van-swipe ref="swiper" :loop="false" touchable @change="onChange">
       <van-swipe-item>
         <div
           class="toppic"
@@ -28,8 +23,7 @@
           style="
             background-image: url(https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/futureCity/B1.png);
           "
-        >
-        </div>
+        ></div>
       </van-swipe-item>
       <van-swipe-item>
         <div
@@ -57,8 +51,7 @@
           style="
             background-image: url('https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/futureCity/C1.png');
           "
-        >
-        </div>
+        ></div>
       </van-swipe-item>
       <div class="custom-indicator" slot="indicator">
         <div class="round" @click="onChange(0)"></div>
@@ -67,20 +60,22 @@
       </div>
     </van-swipe>
     <div class="bgpic">
-     <div class="container animation-3">
+      <div class="container animation-3">
         <div class="shape shape1"></div>
         <div class="shape shape2"></div>
         <div class="shape shape3"></div>
         <div class="shape shape4"></div>
       </div>
-      
-      <div class="vr" @click="toIndex">
-        VR浏览
-      </div>
+
+      <div class="vr" @click="toIndex">VR浏览</div>
     </div>
-    <div class="close"
-    @click="(showBox = true), (num = null)"
-      v-if="showBox === false">返回</div>
+    <div
+      class="close"
+      @click="(showBox = true), (num = null)"
+      v-if="showBox === false"
+    >
+      返回
+    </div>
     <!-- <van-icon
       name="clear"
       class="close"
@@ -140,10 +135,10 @@ export default {
       this.$refs.swiper.swipeTo(index);
       this.isIndex = index;
     },
-    toIndex(){
-      console.log(123)
-     this.num = this.isIndex+1
-     this.showBox = false
+    toIndex() {
+      console.log(123);
+      this.num = this.isIndex + 1;
+      this.showBox = false;
     },
     showAll() {
       this.showclass = true;
@@ -153,7 +148,6 @@ export default {
       this.showclass = false;
       this.open = true;
     },
-    
   },
 };
 </script>
@@ -181,7 +175,6 @@ export default {
       background-size: contain;
       background-repeat: no-repeat;
     }
-    
   }
 
   .van-swipe {
@@ -191,14 +184,14 @@ export default {
     height: 100%;
     overflow: visible;
     z-index: 2;
-    .custom-indicator{
+    .custom-indicator {
       position: fixed;
       top: 13%;
       left: 18%;
       width: 30rem;
       font-size: 10rem;
       display: flex;
-      .round{
+      .round {
         width: 5.2rem;
         height: 5.2rem;
         border-radius: 50%;
@@ -238,7 +231,7 @@ export default {
   height: 32%;
   margin-top: -0.3rem;
   background-size: cover;
-  background-position: bottom;
+  background-position: center;
   background-repeat: no-repeat;
 }
 .bgpic {
@@ -246,26 +239,25 @@ export default {
   width: 100%;
   // height: 35%;
   top: 71%;
-  z-index:6;
+  z-index: 6;
   // background-image: url("https://cqenjoytest.oss-cn-shenzhen.aliyuncs.com/futureCity/xiaoqu");
   // background-size: cover;
   // background-position: bottom;
   // background-repeat: no-repeat;
-  
 }
 .vr {
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    z-index: 8;
-    margin-left: -1.7rem;
-    width: 3.4rem;
-    height: 3.4rem;
-    line-height: 3.4rem;
-    border-radius: 50%;
-    background-color: #fff;
-    font-size: 0.875rem /* 14/16 */;
-  }
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  z-index: 8;
+  margin-left: -1.7rem;
+  width: 3.4rem;
+  height: 3.4rem;
+  line-height: 3.4rem;
+  border-radius: 50%;
+  background-color: #fff;
+  font-size: 0.875rem /* 14/16 */;
+}
 .ifr {
   position: absolute;
   top: 0;
@@ -283,8 +275,8 @@ export default {
   top: 3rem;
   color: #fff;
   background-color: salmon;
-  font-size: .875rem /* 14/16 */;
-  padding: .3125rem  .9375rem ;
+  font-size: 0.875rem /* 14/16 */;
+  padding: 0.3125rem 0.9375rem;
 }
 @keyframes animation3shape1 {
   0% {
