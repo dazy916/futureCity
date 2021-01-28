@@ -136,7 +136,6 @@ export default {
       this.isIndex = index;
     },
     toIndex() {
-      console.log(123);
       this.num = this.isIndex + 1;
       this.showBox = false;
     },
